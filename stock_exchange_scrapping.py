@@ -35,28 +35,35 @@ element_to_remove = 'More...'
 
 trading_codes = [x for x in codes1 if x != element_to_remove]
 
-print(trading_codes)
+print(len(trading_codes))
 
-start_index = 380
-end_index = 621
+start_index = 381
+end_index = 622
 
 trading_codes = [x for i, x in enumerate(trading_codes) if i < start_index or i > end_index]
 
-print(trading_codes)
+print(len(trading_codes))
 
-scrip_codes=[]
-for i in range(0,len(trading_codes)):
-    url=f'https://www.dsebd.org/displayCompany.php?name={trading_codes[i]}'
+from types import NoneType
+scrip_codes = []
+for i in range(0, len(trading_codes)):
+    url = f'https://www.dsebd.org/displayCompany.php?name={trading_codes[i]}'
     response = requests.get(url)
     html_content = response.content
     soup = BeautifulSoup(html_content, "html.parser")
     tag_value = soup.find("tr", {"class": "alt"})
-    scrip_code=tag_value.find_all('th')
-    scrip=scrip_code[1].text
-    sl=slice(11,17)
-    scrip_codes.append(scrip[sl])
+    try:
+        if tag_value is not None:
+            scrip_code = tag_value.find_all('th')
+            scrip = scrip_code[1].text
+            sl = slice(11, 17)
+            scrip_codes.append(scrip[sl])
+        else:
+            print("Tag value not found for trading code:", trading_codes[i])
+    except TypeError:
+        print()
 
-print(scrip_codes)
+print(len(scrip_codes))
 
 urls=[]
 for i in range(0,len(trading_codes)):
