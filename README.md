@@ -24,3 +24,21 @@ Company [Month wise]
 - `Unique IDs` will be generated for each company name.
 - From the other information table data about `sponsors/directors, institutes, public, govt, and foreign` will be extracted.
 - The data will be saved in two CSV files: `company_data.csv` and `holding_data.csv`.
+
+# File Structure
+The project's file structure is organized as follows:
+- ├── stock_exchange_with_scheduler.py              # Main script for web scraping
+- ├── Stock_Exchange_postgres_Connection.py        # Connection to Postgres database
+- ├── company_data.csv        # CSV file containing company data
+- ├── Holding_data.csv        # CSV file containing holding data
+- └── README.md               # Project documentation
+
+# Acknowledgements
+- Beautiful Soup - Library for web scraping in Python
+- Pandas - Data manipulation and analysis library in Python
+- Schedule - Automate data collection
+- Postgres - Store collected data
+
+# Contact
+For any inquiries or questions, please contact your-anasamimulahasun@gmail.com.
+Feel free to customize this documentation to fit your project's specific details and requirements.
