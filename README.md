@@ -40,5 +40,5 @@ The project's file structure is organized as follows:
 - Postgres - Store collected data
 
 # Contact
-For any inquiries or questions, please contact your-anasamimulahasun@gmail.com.
+For any inquiries or questions, please contact -anasamimulahasun@gmail.com.
 Feel free to customize this documentation to fit your project's specific details and requirements.
